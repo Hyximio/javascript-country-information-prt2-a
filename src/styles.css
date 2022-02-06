@@ -2,7 +2,7 @@
 
 * {
     box-sizing: border-box;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -22,20 +22,32 @@ h1 {
     max-width: 100%;
 }
 
-li img{
+.flag-container img{
     margin:10px;
-    width:100px;
-    max-height:80px;
-    border-radius: 4px;
+    height:30px;
+    border-radius: 2px;
+}
+
+.flag-container {
+    display:flex;
+    min-width:90px;
+    margin:0;
+    margin-right:0px;
+}
+
+ul {
+    padding: 0;
 }
 
 li {
+
     display:flex;
+    flex-direction:column;
     flex-basis: 400px;
     flex-grow: 1;
     margin:4px;
     list-style-type: none;
-    min-height: 100px;
+    min-height: 80px;
 
     border: 1px solid  hsl(0, 0%, 30%);
     border-radius: 8px;
@@ -43,21 +55,15 @@ li {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-li:hover {
-    background-color: hsl(0, 0%, 30%);
-}
-
 section {
     display:flex;
-    flex-direction: column;
-    align-self: flex-end;
+    flex-direction: row;
+    margin: 0;
 }
 
 h2 {
-    vertical-align: top;
-    margin-top:10px;
+    margin:5px 0 0 0;
     font-size: 30px;
-    text-align: center;
 }
 
 #list-countries {
@@ -74,3 +80,8 @@ h2 {
 .south-america *    { color: hsl(139,43%,59%); }
 .north-america *    { color: hsl(119,27%,40%); }
 .other-region *     { color: hsl(0,  0%, 60%); }
+
+.population-amount {
+    margin:0px 0px 10px 10px;
+    color:hsl(0,0%,50%);
+}

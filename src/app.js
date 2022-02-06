@@ -34,7 +34,7 @@ async function getCountries() {
 getCountries()
 
 function readablePopulation( _population ) {
-    if (_population === 0) return "-";
+    if (_population === 0) return "unkown";
     return _population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
@@ -60,27 +60,37 @@ function addCountryElement( _country ){
 
     // Create elements
     const listItem = document.createElement('li');
-    const countryInfo = document.createElement('section');
+    const countryFlagName = document.createElement('section');
+    const countryFlagContainer = document.createElement('div');
     const countryFlag = document.createElement('img');
     const countryName = document.createElement('h2');
     const countryPopulation = document.createElement('p');
 
     // Assign alt attribute for flag images
-    countryFlag.setAttribute( "alt", "Flag of " + _country.name )
+    countryFlag.setAttribute( "alt", "Flag of " + _country.name );
 
     // Assign content
     countryFlag.setAttribute( "src", _country.flags.svg );
     countryName.textContent = _country.name;
-    countryPopulation.textContent = "Population: " + readablePopulation( _country.population );
+    countryPopulation.textContent = `Has a population of ${readablePopulation( _country.population )} people`;
 
     // Assign correct region class
     const regionClass = getRegionClass( _country );
     listItem.setAttribute( "class", regionClass );
 
+    // Other classes
+    countryPopulation.setAttribute( "class", "population-amount");
+    countryFlagContainer.setAttribute( "class", "flag-container" );
+    countryFlagName.setAttribute( "class", "flag-name" );
+
     // Append children
-    countryInfo.appendChild( countryName );
-    countryInfo.appendChild( countryPopulation);
-    listItem.appendChild( countryFlag );
-    listItem.appendChild( countryInfo );
+    countryFlagContainer.appendChild( countryFlag );
+
+    countryFlagName.appendChild( countryFlagContainer );
+    countryFlagName.appendChild( countryName );
+
+    listItem.appendChild( countryFlagName );
+    listItem.appendChild( countryPopulation );
+
     countryElement.appendChild( listItem );
 }
