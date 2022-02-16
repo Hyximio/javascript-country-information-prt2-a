@@ -95,4 +95,3 @@ function addCountryElement( _country ){
 
     countryElement.appendChild( listItem );
 }
-
