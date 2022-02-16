@@ -20,6 +20,7 @@ async function getCountries() {
     try {
         const result = await axios.get('https://restcountries.com/v2/all?fields=name,region,subregion,flags,population');
 
+        console.log( result.data )
         // Sort list by population
         result.data.sort( (a, b) => a.population - b.population );
 

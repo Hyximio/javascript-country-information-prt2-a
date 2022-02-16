@@ -11,6 +11,23 @@ body {
     background-color: hsl(0, 0%, 10%);
 }
 
+#to-search {
+    position: absolute;
+    top:150px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor:pointer;
+
+    text-decoration: none;
+    color:hsl(60, 40%, 60%);
+    padding:5px;
+    background-color: hsl(0, 0%, 20%);
+    border-radius: 10px;
+    font-size: 30px;
+}
+#to-search:hover {
+    background-color: hsl(0, 0%, 40%);
+}
 h1 {
     text-align: center;
     color:hsl(0, 0%, 80%);
@@ -40,7 +57,6 @@ ul {
 }
 
 li {
-
     display:flex;
     flex-direction:column;
     flex-basis: 400px;
@@ -72,6 +88,18 @@ h2 {
     flex-basis: 400px;
 }
 
+/*a:link:active, a:visited:active {*/
+/*    text-decoration: none;*/
+/*}*/
+/*#link-to-search {*/
+/*    text-decoration: none;*/
+/*}*/
+a:link {
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
 /* Continent item styling */
 .europe *           { color: hsl(47,100%,60%); }
 .asia *             { color: hsl(354,59%,56%); }
