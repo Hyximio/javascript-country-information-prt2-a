@@ -1,0 +1,19 @@
+{
+  "name": "frontend-javascript-country-information-world-regions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  }
+}
